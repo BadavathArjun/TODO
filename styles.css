@@ -231,6 +231,13 @@ body.dark {
   font-size: 0.8rem;
   color: hsl(240, 18%, 96%);
 }
+.arjun {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: hsl(240, 18%, 96%);
+  text-wrap-style: pretty;
+}
 
 /* Responsive */
 @media (max-width: 600px) {
