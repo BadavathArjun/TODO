@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+</head>
+<body class="dark">
+  <div class="app-container">
+    <header class="app-header">
+      <h1>TODO</h1>
+      <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">
+        <img id="theme-icon" src="images/icon-moon.svg" alt="Toggle Theme" />
+      </button>
+    </header>
+
+    <section class="todo-input-section">
+      <input
+        type="text"
+        id="todo-input"
+        placeholder="Create a new todo..."
+        autocomplete="off"
+      />
+    </section>
+
+    <section class="todo-list-section">
+      <ul id="todo-list"></ul>
+      <footer class="todo-footer">
+        <span id="items-left">0 items left</span>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="active">Active</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <button id="clear-completed">Clear Completed</button>
+      </footer>
+    </section>
+
+    <p class="drag-drop-info">Drag and drop to reorder list</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

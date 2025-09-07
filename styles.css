@@ -1,0 +1,243 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  color: hsl(234, 39%, 85%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  transition: color 0.3s ease;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Light mode background images */
+body.light {
+  color: hsl(235, 19%, 35%);
+  background-image: url('images/bg-mobile-light.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+  background-color: white;
+
+}
+
+@media (min-width: 600px) {
+  body.light {
+    background-image: url('images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top;
+    background-color: white;
+  }
+}
+
+/* Dark mode background images */
+body.dark {
+  color: hsl(234, 39%, 85%);
+  background-image: url('images/bg-mobile-dark.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top;
+  background-color: black;
+}
+
+@media (min-width: 600px) {
+  body.dark {
+    background-image: url('images/bg-desktop-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top;
+    background-color: black;
+  }
+}
+
+.app-container {
+  width: 100%;
+  max-width: 540px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  letter-spacing: 0.5em;
+  font-size: 2rem;
+  color: white;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#theme-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
+.todo-input-section {
+  margin-bottom: 1rem;
+}
+
+#todo-input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+#todo-input::placeholder {
+  color: hsl(234, 11%, 52%);
+}
+
+#todo-input:focus {
+  outline: none;
+  background-color: hsl(236, 33%, 92%);
+  color: hsl(235, 19%, 35%);
+}
+
+.todo-list-section {
+  background-color: hsl(235, 24%, 19%);
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+#todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid hsl(233, 14%, 35%);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item:hover {
+  background-color: hsl(234, 39%, 15%);
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: hsl(233, 14%, 35%);
+}
+
+.todo-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid hsl(233, 14%, 35%);
+  border-radius: 50%;
+  margin-right: 1rem;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.todo-checkbox.checked {
+  background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border: none;
+}
+
+.todo-checkbox.checked img {
+  display: block;
+  width: 12px;
+  height: 9px;
+}
+
+.todo-text {
+  flex-grow: 1;
+  font-size: 1rem;
+  user-select: none;
+}
+
+.todo-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.todo-delete:hover {
+  opacity: 1;
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: hsl(233, 14%, 35%);
+  background-color: hsl(235, 24%, 19%);
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  color: hsl(234, 39%, 85%);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: hsl(220, 98%, 61%);
+}
+
+#clear-completed {
+  background: none;
+  border: none;
+  color: hsl(233, 14%, 35%);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#clear-completed:hover {
+  color: hsl(220, 98%, 61%);
+}
+
+.drag-drop-info {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: hsl(240, 18%, 96%);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  .app-container {
+    max-width: 100%;
+  }
+}
